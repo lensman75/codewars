@@ -9,15 +9,13 @@ function count(string) {
     } else {
         let a = {}
         let strarr = string.split('');
-        for (let i = 0; i <= strarr.length; i++){
+        for (let i = 0; i < strarr.length; i++){
             if (!(strarr[i] in a)) {
                 a[strarr[i]] = 1;
             } else {
-                a[strarr[i]].value = a[strarr[i]].value + 1;
+                a[strarr[i]]++;
             }
         }
         return a;
     }
 }
-
-console.log(count('aba'));
