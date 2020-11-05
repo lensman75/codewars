@@ -24,3 +24,30 @@
 
 // "  *\n ***\n*****\n ***\n  *\n"
 
+function diamond(n) {
+    let mainArr = [];
+    function isOdd(x) {
+        return !(x % 2) == 0;
+    }
+    if (n == 2 || n < 1) { return null; }
+    else {
+        for (let i = n; i >= 0; i--) {
+            if (isOdd(i)) {
+                mainArr.push(i)
+            }
+        }
+        for (let i = n - 1; i >= 0; i--) {
+            if (isOdd(i)) {
+                mainArr.unshift(i);
+            }
+        }
+    }
+    let dia = [];
+    for (let i = 1; i < mainArr.length; i++) {
+        dia.push()
+    }
+
+    return dia;
+}
+
+console.log(diamond(7));
