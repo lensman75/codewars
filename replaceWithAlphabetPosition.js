@@ -24,7 +24,7 @@ function alphabetPosition(text) {
         obj[alphabet[i]] = i + 1;
     }
     let answer = text.split('').map(x => obj[x]).join(' ');
-    answer = answer.trim();  
+    answer = answer.trim();
     answer = answer.split('  ').join(' ');
     answer = answer.split('  ').join(' ');
     answer = answer.split('  ').join(' ');
@@ -32,3 +32,24 @@ function alphabetPosition(text) {
 }
 
 // console.log(alphabetPosition('07%:,cf8'))
+
+//Best practices
+// function alphabetPosition(text) {
+//     return text
+//         .toUpperCase()
+//         .match(/[a-z]/gi)
+//         .map((c) => c.charCodeAt() - 64)
+//         .join(' ');
+// }
+
+// function alphabetPosition(text) {
+//     var result = "";
+//     for (var i = 0; i < text.length; i++) {
+//         var code = text.toUpperCase().charCodeAt(i)
+//         if (code > 64 && code < 91) result += (code - 64) + " ";
+//     }
+
+//     return result.slice(0, result.length - 1);
+// }
+
+// let alphabetPosition = (text) => text.toUpperCase().replace(/[^A-Z]/g, '').split('').map(ch => ch.charCodeAt(0) - 64).join(' ');
