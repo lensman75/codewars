@@ -26,28 +26,31 @@
 
 function diamond(n) {
     let mainArr = [];
+    let dia = '';
+
     function isOdd(x) {
         return !(x % 2) == 0;
     }
+    
     if (n == 2 || n < 1) { return null; }
+    
     else {
         for (let i = n; i >= 0; i--) {
             if (isOdd(i)) {
-                mainArr.push(i)
+                mainArr.push(' '.repeat(n-i) + '*'.repeat(i) + '\n')
             }
         }
         for (let i = n - 1; i >= 0; i--) {
             if (isOdd(i)) {
-                mainArr.unshift(i);
+                mainArr.unshift(' '.repeat(n-i) + '*'.repeat(i) + '\n');
             }
         }
     }
-    let dia = [];
-    for (let i = 1; i < mainArr.length; i++) {
-        dia.push()
-    }
 
+    dia = mainArr.join('')
     return dia;
 }
+
+console.log(diamond(5));
 
 console.log(diamond(7));
