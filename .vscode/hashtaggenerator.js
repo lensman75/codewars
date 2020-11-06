@@ -15,3 +15,16 @@
 // "    Hello     World   "                  =>  "#HelloWorld"
 // ""                                        =>  false
 
+function generateHashtag(str) {
+    if (str.trim() == '') {
+        return false;
+    }
+    str = str.split(' ').map(x => x.charAt(0).toUpperCase() + x.substr(1).toLowerCase()).join('');
+    str = '#' + str;
+    if (str.length > 140) {
+        return false;
+    }
+    return str;
+}
+
+console.log(generateHashtag("code" + " ".repeat(140) + "wars"))
