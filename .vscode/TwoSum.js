@@ -10,3 +10,14 @@
 
 // twoSum [1, 2, 3] 4 === (0, 2)
 
+function twoSum(numbers, target) {
+    let sum;
+    for (let x = 0; x < numbers.length; x++) {
+        for (let y = 1; y <= numbers.length; y++)
+            sum = x + y;
+            console.log(sum);
+    }
+    return sum;
+}
+
+console.log(twoSum([1, 2, 3], 4))
