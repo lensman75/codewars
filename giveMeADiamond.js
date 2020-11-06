@@ -31,18 +31,18 @@ function diamond(n) {
     function isOdd(x) {
         return !(x % 2) == 0;
     }
-    
+
     if (n == 2 || n < 1) { return null; }
-    
+
     else {
         for (let i = n; i >= 0; i--) {
             if (isOdd(i)) {
-                mainArr.push(' '.repeat(n-i) + '*'.repeat(i) + '\n')
+                mainArr.push(' '.repeat(n - i) + '*'.repeat(i) + '\n')
             }
         }
         for (let i = n - 1; i >= 0; i--) {
             if (isOdd(i)) {
-                mainArr.unshift(' '.repeat(n-i) + '*'.repeat(i) + '\n');
+                mainArr.unshift(' '.repeat(n - i) + '*'.repeat(i) + '\n');
             }
         }
     }
@@ -54,3 +54,16 @@ function diamond(n) {
 console.log(diamond(5));
 
 console.log(diamond(7));
+
+// Best practice.
+// function diamond(n) {
+//     if (n <= 0 || n % 2 === 0) return null
+//     str = ''
+//     for (let i = 0; i < n; i++) {
+//         let len = Math.abs((n - 2 * i - 1) / 2)
+//         str += ' '.repeat(len)
+//         str += '*'.repeat(n - 2 * len)
+//         str += '\n'
+//     }
+//     return str
+// }
