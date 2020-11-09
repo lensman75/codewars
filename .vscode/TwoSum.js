@@ -14,26 +14,27 @@
 // twoSum [1, 2, 3] 4 === (0, 2)
 
 function twoSum(numbers, target) {
-    console.log(numbers);
     let sum;
     let ans = [];
-    let answer =[]
     for (let x = 0; x < numbers.length; x++) {
-        console.log(numbers[x])
-        for (var y = x+1; y < numbers.length; y++){
+        for (var y = x + 1; y < numbers.length; y++) {
             sum = numbers[x] + numbers[y];
-            console.log(sum);
             if (sum == target) {
                 ans.push(x);
                 ans.push(y);
-                // return ans;
-                
             }
-            
         }
-        answer.push(ans);
     }
     return ans;
 }
 
-console.log(twoSum([1,2,3,4,5,6,7,8,9,10], 7))
+console.log(twoSum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
+
+//Best practice
+// function twoSum(numbers, target) {
+//     for (var i = 0; i < numbers.length - 1; i++) {
+//         for (var j = i + 1; j < numbers.length; j++) {
+//             if (numbers[i] + numbers[j] === target) return [i, j];
+//         }
+//     }
+// }
