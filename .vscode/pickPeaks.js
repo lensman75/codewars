@@ -28,7 +28,7 @@ function pickPeaks(arr) {
             pos.push(indexOf(arr[0]));
         } else {
             for (let i = 1; i < arr.length; i++) {
-                if ((arr[i] > arr[i - 1] && arr[i] > arr[i + 1] || (arr[i] < arr[i - 1] && arr[i] < arr[i + 1]))){
+                if ((arr[i] > arr[i - 1] && arr[i] > arr[i + 1] )){
                     peak.push(arr[i]);
                     pos.push(arr.indexOf(i));
                 }
