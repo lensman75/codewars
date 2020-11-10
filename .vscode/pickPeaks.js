@@ -30,7 +30,8 @@ function pickPeaks(arr) {
             for (let i = 1; i < arr.length; i++) {
                 if ((arr[i] > arr[i - 1] && arr[i] > arr[i + 1] )){
                     peak.push(arr[i]);
-                    pos.push(arr.indexOf(i));
+                    pos.push(arr.indexOf(arr[i]));
+                    console.log(arr.indexOf(6))
                 }
             }
         }
