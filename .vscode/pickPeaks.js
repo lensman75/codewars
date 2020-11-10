@@ -16,3 +16,31 @@
 
 // Have fun!
 
+function pickPeaks(arr) {
+    let answer = {}
+    let peak = []
+    let pos = []
+    if (arr.length == 0) {
+        return answer.pos = [], answer.peaks = [];
+    } else {
+        if (arr[0] > arr[1]) {
+            peak.push(arr[0]);
+            pos.push(indexOf(arr[0]));
+        } else {
+            for (let i = 1; i < arr.length; i++) {
+                if ((arr[i] > arr[i - 1] && arr[i] > arr[i + 1] || (arr[i] < arr[i - 1] && arr[i] < arr[i + 1]))){
+                    peak.push(arr[i]);
+                    pos.push(arr.indexOf(i));
+                }
+            }
+        }
+
+    }
+    answer = answer["peak"] = peak;
+    answer = answer["pos"] = pos;
+    return answer;
+}
+
+console.log(pickPeaks([1, 2, 3, 6, 4, 1, 2, 3, 2, 1]))
+
+// 1, 2, 3, 6, 4, 1, 2, 3, 2, 1
