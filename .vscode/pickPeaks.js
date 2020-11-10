@@ -36,8 +36,9 @@ function pickPeaks(arr) {
         }
 
     }
-    answer = answer["peak"] = peak;
-    answer = answer["pos"] = pos;
+    answer["peak"] = peak;
+    answer["pos"] = pos;
+
     return answer;
 }
 
