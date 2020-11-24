@@ -36,7 +36,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getHourText(hours){
+    function getHourText(hours) {
         if (hours == 0) {
             return '';
         } else if (hours == 1) {
@@ -46,7 +46,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getMinuteText(minutes){
+    function getMinuteText(minutes) {
         if (minutes == 0) {
             return '';
         } else if (minutes == 1) {
@@ -56,7 +56,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getSecondText(leftseconds){
+    function getSecondText(leftseconds) {
         if (leftseconds == 0) {
             return '';
         } else if (leftseconds == 1) {
@@ -66,21 +66,15 @@ function formatDuration(seconds) {
         }
     }
     let arr = [];
-    arr.push(getYearText(years),getDayText(days),getHourText(hours),getMinuteText(minutes),getSecondText(leftseconds));
+    arr.push(getYearText(years), getDayText(days), getHourText(hours), getMinuteText(minutes), getSecondText(leftseconds));
     arr = arr.filter(n => n);
 
-    let arrone = arr.slice(0,arr.length-1);
-    let arrtwo = arr[arr.length-1];
+    let arrone = arr.slice(0, arr.length - 1);
+    let arrtwo = arr[arr.length - 1];
 
-    // let answer = arrone.join(', ') + ' and ' + ' ' + arrtwo;
-    function getAnswer(){
-        if (arr.length == 1) {
-            return arrtwo;
-        } else {
-            return arrone.join(', ') + ' and ' + arrtwo;
-        }
+    if (arr.length == 1) {
+        return arrtwo;
+    } else {
+        return arrone.join(', ') + ' and ' + arrtwo;
     }
-
-    return getAnswer();
-
 }
