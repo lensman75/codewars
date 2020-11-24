@@ -21,8 +21,7 @@ function formatDuration(seconds) {
     let leftseconds = seconds - (years * oneYear + days * oneDay + hours * oneHour + minutes * oneMinute);
     console.log(leftseconds);
 
-    function getYearText() {
-        console.log(years);
+    function getYearText(years) {
         if (years == 0) {
             return '';
         } else if (years == 1) {
@@ -32,7 +31,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getDayText() {
+    function getDayText(days) {
         if (days == 0) {
             return '';
         } else if (days == 1) {
@@ -42,7 +41,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getHourText(){
+    function getHourText(hours){
         if (hours == 0) {
             return '';
         } else if (hours == 1) {
@@ -52,7 +51,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getMinuteText(){
+    function getMinuteText(minutes){
         if (minutes == 0) {
             return '';
         } else if (minutes == 1) {
@@ -62,7 +61,7 @@ function formatDuration(seconds) {
         }
     }
 
-    function getSecondText(){
+    function getSecondText(leftseconds){
         if (leftseconds == 0) {
             return '';
         } else if (leftseconds == 1) {
@@ -72,7 +71,7 @@ function formatDuration(seconds) {
         }
     }
     let arr = [];
-    arr.push(getYearText(),getDayText(),getHourText(),getMinuteText(),getSecondText());
+    arr.push(getYearText(years),getDayText(days),getHourText(hours),getMinuteText(minutes),getSecondText(leftseconds));
     arr = arr.filter(n => n);
 
     let arrone = arr.slice(0,arr.length-1);
@@ -90,4 +89,3 @@ function formatDuration(seconds) {
     return getAnswer();
 
 }
-
