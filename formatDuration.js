@@ -1,24 +1,24 @@
 // https://www.codewars.com/kata/52742f58faf5485cae000b9a/train/javascript
 
 function formatDuration(seconds) {
-    let oneminute = 60;
-    let onehour = oneminute * 60;
-    let oneday = onehour * 24;
-    let oneyear = oneday * 365;
+    let oneMinute = 60;
+    let oneHour = oneMinute * 60;
+    let oneDay = oneHour * 24;
+    let oneYear = oneDay * 365;
 
     if (seconds == 0) {
         return 'now';
     }
 
-    let years = Math.floor(seconds / oneyear);
+    let years = Math.floor(seconds / oneYear);
     console.log(years);
-    let days = Math.floor((seconds - years * oneyear) / oneday);
+    let days = Math.floor((seconds - years * oneYear) / oneDay);
     console.log(days);
-    let hours = Math.floor((seconds - years * oneyear - days * oneday) / onehour);
+    let hours = Math.floor((seconds - years * oneYear - days * oneDay) / oneHour);
     console.log(hours);
-    let minutes = Math.floor((seconds - years * oneyear - days * oneday - hours * onehour) / oneminute);
+    let minutes = Math.floor((seconds - years * oneYear - days * oneDay - hours * oneHour) / oneMinute);
     console.log(minutes);
-    let leftseconds = seconds - (years * oneyear + days * oneday + hours * onehour + minutes * oneminute);
+    let leftseconds = seconds - (years * oneYear + days * oneDay + hours * oneHour + minutes * oneMinute);
     console.log(leftseconds);
 
     function getYearText() {
