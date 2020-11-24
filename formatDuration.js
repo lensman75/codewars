@@ -11,15 +11,10 @@ function formatDuration(seconds) {
     }
 
     let years = Math.floor(seconds / oneYear);
-    console.log(years);
     let days = Math.floor((seconds - years * oneYear) / oneDay);
-    console.log(days);
     let hours = Math.floor((seconds - years * oneYear - days * oneDay) / oneHour);
-    console.log(hours);
     let minutes = Math.floor((seconds - years * oneYear - days * oneDay - hours * oneHour) / oneMinute);
-    console.log(minutes);
     let leftseconds = seconds - (years * oneYear + days * oneDay + hours * oneHour + minutes * oneMinute);
-    console.log(leftseconds);
 
     function getYearText(years) {
         if (years == 0) {
