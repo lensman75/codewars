@@ -4,7 +4,8 @@
 function permutable(s1, s2) {
     let obj1 = {}, obj2 = {};
 
-    function countSymbols(str, obj) {
+    function countSymbols(str) {
+        let obj = {}
         for (let i = 0; i < str.length; i++) {
             if (!(str[i] in obj)) {
                 obj[str[i]] = 1;
@@ -14,6 +15,9 @@ function permutable(s1, s2) {
         }
         return obj;
     }
+
+    obj1 = countSymbols(s1);
+    obj2 = countSymbols(s2);
     
     countSymbols(s1, obj1);
     countSymbols(s2, obj2);
