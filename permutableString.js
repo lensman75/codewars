@@ -33,6 +33,9 @@ function permutable(s1, s2) {
 }
 
 function mainFunc(st1, st2) {
+    if (st1.length > st2.length) {
+        return false;
+    }
     for (let i = 0; i < st2.length; i++) {
         console.log(st2.slice(i, i + st1.length));
         let slicedString = st2.slice(i, i + st1.length);
