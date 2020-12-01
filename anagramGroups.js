@@ -1,6 +1,6 @@
 let strs = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'];
 
-let group = new Array();
+let group = [];
 
 function compareObjects(item1, item2) {
   let obj1 = {};
