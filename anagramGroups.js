@@ -19,41 +19,56 @@ function compareObjects(item1, item2) {
       obj2[(item2[i] = obj2[item[i]] + 1)];
     }
   }
+  
 
-  const keys1 = Object.keys(item1);
-  const keys2 = Object.keys(item2);
+
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  
+
 
   if (!(keys1.length == keys2.length)) {
     return false;
   }
 
+  
+
   for (let keys in keys1) {
+    
     if (!(keys1[keys] == keys2[keys])) {
       return false;
     }
   }
   return true;
 }
+compareObjects(strs[0],strs[1]); //?
 
 let counter = 0;
+let checkArray = [];
 
-for (let i = 1; i < strs.length; i++) {
-  group[counter] = new Array();
-  group[counter].push(strs[0]);
-  group[counter].push(strs[i]);
-  if (compareObjects(strs[0], strs[i]) == true) {
-    group[counter].push(strs[i]);
-  } else {
-    continue;
-  }
-  //   for (let x = strs.length; x > 0; x--) {
-  //     if (compareObjects(strs[0], strs[x - 1]) == true){
-  //       strs.splice(x-1,1);
-
-  //     } else {continue}
-  //     strs.shift();
-  //   }
-  counter += 1;
+for (let i = 0; i < strs.length; i++){
+  checkArray.push(1);
 }
+
+checkArray;
+
+// for (let i = 0; i < strs.length; i++) {
+//   if (checkArray[i] != 1) {
+//     continue;
+//   } else{
+//     group[counter] = [];
+//     group[counter].push(strs[i]);
+//     checkArray[i] = 0;
+//     for (let x = i+1; x < strs.length; x++){
+//       if (compareObjects(strs[i],strs[x]) == true){
+//         strs[i];//?
+//         strs[x];//?
+//         group[counter].push(strs[x])
+//         checkArray[x] = 0
+//       }
+//     }
+//   }
+//   counter +=1;
+// }
 
 group;
