@@ -10,3 +10,7 @@ checkValueInArray.js
 quarterOfTheYear.js
 sortAndStar.js
 catYearsDogYears.js
+
+#4.04.2021
+templateStrings.js
+findSmallestInArray.js
