@@ -1,43 +1,52 @@
 // https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
-// function check(a1, a2, logop) {
-//   switch (logop) {
-//     case 'OR':
-//       if (
-//         (a1 == true && a2 == true) ||
-//         (a1 == false && a2 == true) ||
-//         (a1 == true && a2 == false)
-//       ) {
-//         return true;
-//       } else {
-//         return false;
-//       }
-//     case 'XOR':
-//       if ((a1 == false && a2 == false) || (a1 == true && a2 == true)) {
-//         return false;
-//       } else {
-//         return true;
-//       }
-//     case 'AND':
-//       if (a1 == true && a2 == true) {
-//         return true;
-//       } else return false;
-//   }
-// }
-
 function logicalCalc(array, op) {
-  if (array.length ==1) {
+  if (op === 'XOR' && array.length == 1) {
     return array[0];
   }
-  let x = array[0];
-  let y = array[1];
-  for (let i = 3; i < array.length; i++){
-    
+  if (op === 'AND') {
+    let res = array.reduce(function (one, two) {
+      return one && two;
+    }, array[0]);
+    return res;
+  }
+  if (op === 'OR') {
+    let res = array.reduce(function (one, two) {
+      return one || two;
+    }, array[0]);
+    return res;
+  }
+  if (op === 'XOR') {
+    let res = array.reduce(function (one, two) {
+      return one ^ two;
+    }, array[0]);
+    if (res == 1) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
 
-logicalCalc([false], 'AND');
-logicalCalc([false], 'OR');
-logicalCalc([false], 'XOR');
-logicalCalc([true], 'AND');
-logicalCalc([true], 'OR');
-logicalCalc([true], 'XOR');
+logicalCalc([true, true, true, false], 'AND'); // false
+logicalCalc([true, true, true, false], 'XOR'); // true
+logicalCalc([true, true, true, false], 'XOR'); // true
+logicalCalc([true, true, true, false], 'XOR'); // true
+logicalCalc([true, true, false, false], 'AND'); // false
+logicalCalc([true, true, false, false], 'OR'); // true
+logicalCalc([true, true, true, false], 'OR'); // true
+logicalCalc([true, true, false, false], 'XOR'); // false
+logicalCalc([true, false, false, false], 'AND'); // false
+logicalCalc([true, false, false, false], 'OR'); // true
+logicalCalc([true, false, false, false], 'XOR'); // true
+logicalCalc([true, true], 'AND'); //?
+logicalCalc([true, true], 'OR'); //?
+logicalCalc([true, true], 'XOR'); //?
+logicalCalc([false, false], 'AND'); //?
+logicalCalc([false, false], 'OR'); //?
+logicalCalc([false, false], 'XOR'); //?
+logicalCalc([false], 'AND'); //?
+logicalCalc([false], 'OR'); //?
+logicalCalc([false], 'XOR'); //?
+logicalCalc([true], 'AND'); //?
+logicalCalc([true], 'OR'); //?
+logicalCalc([true], 'XOR'); //?
